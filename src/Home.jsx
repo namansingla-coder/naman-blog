@@ -23,7 +23,9 @@ function Home(){
       <h1 class="font-bold text-4xl text-gray-800 text-center md:text-5xl md:text-left">Hi, I am Naman,<br />
       Creative Technologist</h1>
       <p class="text-center text-gray-800 md:text-left">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+      <a href="/naman_resume.pdf" download="naman_resume.pdf">
       <button class="self-center bg-red-400 px-5 py-3 text-white font-medium md:self-start">Download Resume</button>
+      </a>
     </div>
   </div>
 <div class="mt-14 md:mt-16 flex flex-col bg-blue-50 pb-8">
@@ -106,9 +108,9 @@ function Home(){
 <div class="mt-36 md:mt-20 flex flex-col gap-2 pb-12">
   <div class="flex gap-7 mx-auto">
     <Link to=""><img src="https://i.pinimg.com/736x/bb/90/24/bb902442d0880e99732aa1aada0c08de.jpg" class="max-w-8 max-h-8" /></Link>
-    <Link to=""><img src="https://i.pinimg.com/originals/63/9b/3d/639b3dafb544d6f061fcddd2d6686ddb.png" class="max-w-8 max-h-8" /></Link>
-    <Link to=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcErlbMsKsQG45xvST9jdYxzWwUWru1KCZJQ&s" class="max-w-8 max-h-8" /></Link>
-    <Link to=""><img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" class="max-w-8 max-h-8" /></Link>
+    <Link to="https://www.instagram.com/naman_singla__/"><img src="https://i.pinimg.com/originals/63/9b/3d/639b3dafb544d6f061fcddd2d6686ddb.png" class="max-w-8 max-h-8" /></Link>
+    <Link to="https://x.com/NamanSingla7642"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcErlbMsKsQG45xvST9jdYxzWwUWru1KCZJQ&s" class="max-w-8 max-h-8" /></Link>
+    <Link to="https://www.linkedin.com/in/namansingla7642"><img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" class="max-w-8 max-h-8" /></Link>
   </div>
   <div class="mx-auto">
     <p class="text-sm text-gray-800">Copyright @2020 All rights reserved</p>

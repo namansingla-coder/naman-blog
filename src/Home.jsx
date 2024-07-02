@@ -2,7 +2,9 @@ import React from "react";
 import show from "./app"
 import profile from "./images/profile.jpg";
 import { Link } from "react-router-dom";
-
+import naman_resume from "./assets/naman_resume.pdf";
+import Project from "./project"
+import Eazy_cart_1 from "./images/eazyCartes_home.png"
 function Home(){
     return (
         <>
@@ -22,9 +24,9 @@ function Home(){
     <div class="gap-5 max- flex flex-col md:gap-10">
       <h1 class="font-bold text-4xl text-gray-800 text-center md:text-5xl md:text-left">Hi, I am Naman,<br />
       Creative Technologist</h1>
-      <p class="text-center text-gray-800 md:text-left">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-      <a href="/naman_resume.pdf" download="naman_resume.pdf">
-      <button class="self-center bg-red-400 px-5 py-3 text-white font-medium md:self-start">Download Resume</button>
+      <p class="text-center text-gray-800 md:text-left">Second-year B.Tech student with strong coding skills, database expertise, and front-end development experience. Actively engaged in hackathons, LeetCode, and certified in relevant technologies. Adept at back-end and front-end tasks, seeking an internship to apply and enhance skills. Dedicated team player with a 'never give up' attitude, backed by a passion for badminton.</p>
+      <a class="self-center" href={naman_resume} download="naman_resume.pdf">
+      <button class=" bg-red-400 px-5 py-3 text-white font-medium md:self-start">Download Resume</button>
       </a>
     </div>
   </div>
@@ -67,42 +69,16 @@ function Home(){
         <div class="mx-5 py-4 flex flex-col gap-5 md:mx-36">
     <h3 class="py-1 text-gray-800 text-center md:text-left">Featured works</h3>
     <div class="flex flex-col gap-12">
-      <div class="flex flex-col md:flex-row gap-4">
-        <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/317287654/original/72386893175d493ae6e30bdf93ed5c17a7169b66/create-creative-and-user-friendly-dashboards-for-best-business-insights.png" class="max-w-64 max-h-44" />
-        <div class="flex flex-col gap-5">
-          <h2 class="font-bold text-2xl md:text-3xl text-gray-800">Designing Dashboards</h2>
-          <div class="flex gap-5 md:gap-6">
-            <p class="text-lg border bg-black text-white px-2 rounded-2xl">2020</p>
-            <p class="text-xl text-gray-400">Dashboard</p>
-          </div>
-          <p class="text-base text-gray-800">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-        </div>
-      </div>
+    <Project id="1" title="Eazy Carters" date="2024" subheading="Ecommerce" images={[Eazy_cart_1]} discrptions={["An e-commerce website project involves creating an online platform where users can browse, select, and purchase products or services. The website typically includes features such as product catalogs, shopping carts, user accounts, payment gateways, and order management systems."]} />
       <hr />
       <div class="hidden md:block md:flex md:gap-4">
-        <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/317287654/original/72386893175d493ae6e30bdf93ed5c17a7169b66/create-creative-and-user-friendly-dashboards-for-best-business-insights.png" class="max-w-64 max-h-44" />
-        <div class="flex flex-col gap-5">
-          <h2 class="font-bold text-3xl text-gray-800">Vibrant Portraits of 2020</h2>
-          <div class="flex gap-16">
-            <p class="text-lg border bg-black text-white px-2 rounded-2xl">2020</p>
-            <p class="text-xl text-gray-400">illudtration</p>
-          </div>
-          <p class="text-base text-gray-800">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-        </div>
+      <Project id="1" title="Eazy Carters" date="2024" subheading="Ecommerce" images={[Eazy_cart_1]} discrptions={["An e-commerce website project involves creating an online platform where users can browse, select, and purchase products or services. The website typically includes features such as product catalogs, shopping carts, user accounts, payment gateways, and order management systems."]} />
       </div>
-      <hr hidden md:block />
+      <hr class="hidden md:block "/>
       <div class="hidden md:block md:flex md:gap-4">
-        <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/317287654/original/72386893175d493ae6e30bdf93ed5c17a7169b66/create-creative-and-user-friendly-dashboards-for-best-business-insights.png" class="max-w-64 max-h-44" />
-        <div class="flex flex-col gap-5">
-          <h2 class="font-bold text-3xl text-gray-800">36 Days of Malayalam type</h2>
-          <div class="flex gap-16">
-            <p class="text-lg border bg-black text-white px-2 rounded-2xl">2018</p>
-            <p class="text-xl text-gray-400">Typography</p>
-          </div>
-          <p class="text-base text-gray-800">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-        </div>
+      <Project id="1" title="Eazy Carters" date="2024" subheading="Ecommerce" images={[Eazy_cart_1]} discrptions={["An e-commerce website project involves creating an online platform where users can browse, select, and purchase products or services. The website typically includes features such as product catalogs, shopping carts, user accounts, payment gateways, and order management systems."]} />
       </div>
-      <hr hidden md:block />
+      <hr class="hidden md:block "/>
         </div>
     </div> 
 <div class="mt-36 md:mt-20 flex flex-col gap-2 pb-12">

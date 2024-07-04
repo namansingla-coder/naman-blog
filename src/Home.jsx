@@ -25,8 +25,8 @@ function Home(){
       <h1 class="font-bold text-4xl text-gray-800 text-center md:text-5xl md:text-left">Hi, I am Naman,<br />
       Creative Technologist</h1>
       <p class="text-center text-gray-800 md:text-left">Second-year B.Tech student with strong coding skills, database expertise, and front-end development experience. Actively engaged in hackathons, LeetCode, and certified in relevant technologies. Adept at back-end and front-end tasks, seeking an internship to apply and enhance skills. Dedicated team player with a 'never give up' attitude, backed by a passion for badminton.</p>
-      <a class="self-center" href={naman_resume} download="naman_resume.pdf">
-      <button class=" bg-red-400 px-5 py-3 text-white font-medium md:self-start">Download Resume</button>
+      <a class="self-center md:self-start" href={naman_resume} download="naman_resume.pdf">
+      <button class=" bg-red-400 px-5 py-3 text-white font-medium">Download Resume</button>
       </a>
     </div>
   </div>

@@ -1,100 +1,92 @@
 import React from "react";
-import show from "./app"
-import profile from "./images/profile.jpg";
+import Header from "./header";
 import { Link } from "react-router-dom";
-import naman_resume from "./assets/naman_resume.pdf";
-import Project from "./project"
-import Eazy_cart_1 from "./images/eazyCartes_home.png"
-function Home(){
-    return (
-        <>
-        <div class="flex justify-end mt-7 mr-8 gap-4">
-<div id="header" class="hidden flex gap-4 md:block self-center md:h-12 md:flex md:justify-end md:gap-8">
-  <Link class="text-red-400" to="/">Home</Link>
-    <Link to="/work">Work</Link>
-    <Link to="/blog">Blog</Link>
-    <Link to="/blog">Contact</Link>
-  </div>
-    <button  onClick={show} class="md:hidden block rotate-90">
-      <p class="text-3xl">|||</p>
-    </button>
-        </div>
-<div class="flex flex-col gap-8 mx-24 mt-8 md:flex-row md:mt-36 md:gap-28 md:mx-36">
-    <img src={profile} alt="profile" class="rounded-full mx-auto max-h-60 md:order-1" />
-    <div class="gap-5 max- flex flex-col md:gap-10">
-      <h1 class="font-bold text-4xl text-gray-800 text-center md:text-5xl md:text-left">Hi, I am Naman,<br />
-      Creative Technologist</h1>
-      <p class="text-center text-gray-800 md:text-left">Second-year B.Tech student with strong coding skills, database expertise, and front-end development experience. Actively engaged in hackathons, LeetCode, and certified in relevant technologies. Adept at back-end and front-end tasks, seeking an internship to apply and enhance skills. Dedicated team player with a 'never give up' attitude, backed by a passion for badminton.</p>
-      <a class="self-center md:self-start" href={naman_resume} download="naman_resume.pdf">
-      <button class=" bg-red-400 px-5 py-3 text-white font-medium">Download Resume</button>
-      </a>
-    </div>
-  </div>
-<div class="mt-14 md:mt-16 flex flex-col bg-blue-50 pb-8">
-    <div class="mx-36 md:flex md:justify-between">
-    <h3 class="text-center py-5 text-gray-800">Recent Posts</h3>
-      <Link to="www.google.com" class="hidden text-sky-500 text-right mt-5 md:inline">view all</Link>
-    </div>
-    <div class="mx-3 md:mx-36 flex flex-col md:flex-row gap-4 md:gap-5">
-      <div class="bg-white px-5 py-3 md:px-6 md:py-5">
-        <div class="flex flex-col gap-3 md:gap-4">
-          <h2 class="text-2xl font-bold text-gray-800 md:text-3xl">Making a design system from scratch</h2>
-          <div class="flex gap-7">
-          <p class="text-lg text-gray-800">12 Feb 2020</p>
-            <p class="text-lg text-gray-800">|</p>
-            <p class="text-lg text-gray-800">Design, Pattern</p>
-          </div>
-          <p class="text-base text-gray-800">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-        </div>
-        
-      </div>
-      
+import Naman_Singla from "./assets/Naman_Singla.pdf";
+import { projects } from "./data/projects";
+import { experiences } from "./data/experiences";
+import Footer from "./footer";
 
-      <div class="bg-white px-5 py-3 md:px-6 md:py-5">
-        <div class="flex flex-col gap-3 md:gap-4">
-          <h2 class="text-2xl font-bold md:text-3xl text-gray-800">Creating pixel perfect icons in Figma</h2>
-          <div class="flex gap-7">
-          <p class="text-lg text-gray-800">12 Feb 2020</p>
-            <p class="text-lg text-gray-800">|</p>
-            <p class="text-lg text-gray-800">Figma, Icon Design</p>
+function Home() {
+  return (
+    <>
+      <Header selected="home" />
+      <div className="flex flex-col items-center text-center gap-8 mx-6 mt-8 md:mt-24 md:gap-20 md:mx-36 md:text-left">
+        <div className="gap-5 flex flex-col md:gap-8 text-center">
+          <h1 className="font-bold text-5xl text-gray-900 leading-tight">Hi, I am Naman Singla</h1>
+          <p className="text-lg text-gray-700 max-w-xl mx-auto">
+            B.Tech student with strong coding skills, database expertise, and front-end development experience. Adept at back-end and front-end tasks, seeking an internship to enhance skills.
+          </p>
+          <div className="flex justify-center gap-4">
+            <a href={Naman_Singla} download="Naman_Singla.pdf">
+              <button className="bg-red-500 px-6 py-3 text-white font-medium rounded-lg shadow-md hover:bg-red-600 transition duration-300">
+                Download Resume
+              </button>
+            </a>
+            <Link to="/projects">
+              <button className="bg-blue-600 px-6 py-3 text-white font-medium rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+                View Projects
+              </button>
+            </Link>
           </div>
-          <p class="text-base text-gray-800">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
         </div>
-
       </div>
-    </div>
-    
-    
-  </div>
-        <div class="mx-5 py-4 flex flex-col gap-5 md:mx-36">
-    <h3 class="py-1 text-gray-800 text-center md:text-left">Featured works</h3>
-    <div class="flex flex-col gap-12">
-    <Project id="1" title="Eazy Carters" date="2024" subheading="Ecommerce" images={[Eazy_cart_1]} discrptions={["An e-commerce website project involves creating an online platform where users can browse, select, and purchase products or services. The website typically includes features such as product catalogs, shopping carts, user accounts, payment gateways, and order management systems."]} />
-      <hr />
-      <div class="hidden md:block md:flex md:gap-4">
-      <Project id="1" title="Eazy Carters" date="2024" subheading="Ecommerce" images={[Eazy_cart_1]} discrptions={["An e-commerce website project involves creating an online platform where users can browse, select, and purchase products or services. The website typically includes features such as product catalogs, shopping carts, user accounts, payment gateways, and order management systems."]} />
-      </div>
-      <hr class="hidden md:block "/>
-      <div class="hidden md:block md:flex md:gap-4">
-      <Project id="1" title="Eazy Carters" date="2024" subheading="Ecommerce" images={[Eazy_cart_1]} discrptions={["An e-commerce website project involves creating an online platform where users can browse, select, and purchase products or services. The website typically includes features such as product catalogs, shopping carts, user accounts, payment gateways, and order management systems."]} />
-      </div>
-      <hr class="hidden md:block "/>
+      <div className="mt-14 md:mt-16 flex flex-col bg-blue-50 pb-12">
+        <div className="mx-6 md:mx-36">
+          <h3 className="text-center py-5 text-gray-900 font-bold text-2xl">Education</h3>
         </div>
-    </div> 
-<div class="mt-36 md:mt-20 flex flex-col gap-2 pb-12">
-  <div class="flex gap-7 mx-auto">
-    <Link to=""><img src="https://i.pinimg.com/736x/bb/90/24/bb902442d0880e99732aa1aada0c08de.jpg" class="max-w-8 max-h-8" /></Link>
-    <Link to="https://www.instagram.com/naman_singla__/"><img src="https://i.pinimg.com/originals/63/9b/3d/639b3dafb544d6f061fcddd2d6686ddb.png" class="max-w-8 max-h-8" /></Link>
-    <Link to="https://x.com/NamanSingla7642"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcErlbMsKsQG45xvST9jdYxzWwUWru1KCZJQ&s" class="max-w-8 max-h-8" /></Link>
-    <Link to="https://www.linkedin.com/in/namansingla7642"><img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" class="max-w-8 max-h-8" /></Link>
-  </div>
-  <div class="mx-auto">
-    <p class="text-sm text-gray-800">Copyright @2020 All rights reserved</p>
-  </div>
-  
-</div>
-</>
-    
-    )
+        <div className="mx-3 md:mx-36 flex flex-col gap-6">
+          {[{
+            title: "B.Tech in Computer Science Engineering",
+            institution: "Bennett University",
+            year: "2022 - 2026",
+            details: "Focused on software development, deep learning, and full-stack web development. CGPA: 9.14"
+          }, {
+            title: "Class XII (CBSE)",
+            institution: "MDN Public School",
+            year: "2021 - 2022",
+            details: "Completed higher secondary education with a strong foundation in mathematics and computer science."
+          }].map((edu, index) => (
+            <div key={index} className="bg-white p-6 shadow-lg rounded-lg border-l-4 border-blue-500">
+              <h4 className="text-2xl font-semibold text-gray-900">{edu.title}</h4>
+              <p className="text-gray-600 text-sm">{edu.institution} | {edu.year}</p>
+              <p className="text-gray-700 mt-2">{edu.details}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mx-5 py-6 flex flex-col gap-5 md:mx-36">
+        <div className="flex justify-between items-center">
+          <h3 className="text-gray-900 font-bold text-2xl">Featured Projects</h3>
+          <Link to="/projects" className="text-blue-600 font-semibold text-lg hover:underline">See All</Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.slice(0, 2).map((project) => (
+            <div key={project.id} className="bg-white p-6 shadow-lg rounded-lg border-t-4 border-gray-300">
+              <h3 className="text-2xl font-semibold text-gray-900">{project.title}</h3>
+              <p className="text-gray-600 text-sm mb-2">{project.date} • {project.category}</p>
+              <p className="text-gray-700 mb-4">{project.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mx-5 py-6 flex flex-col gap-5 md:mx-36">
+        <div className="flex justify-between items-center">
+          <h3 className="text-gray-900 font-bold text-2xl">Work Experience</h3>
+          <Link to="/work" className="text-blue-600 font-semibold text-lg hover:underline">See All</Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {experiences.slice(0, 2).map((exp) => (
+            <div key={exp.id} className="bg-white p-6 shadow-lg rounded-lg border-t-4 border-gray-300">
+              <h3 className="text-2xl font-semibold text-gray-900">{exp.title}</h3>
+              <p className="text-gray-600 text-sm mb-2">{exp.company} • {exp.date}</p>
+              <p className="text-gray-700 mb-4">{exp.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
 }
+
 export default Home;

@@ -1,20 +1,43 @@
 import React from "react";
-function project({id,title,date,subheading,images,discrptions}){
-    return (
-        <>
-            <div class="flex flex-col md:flex-row gap-4">
-            <img src={images[0]} class="max-w-64 max-h-44" />
-            <div class="flex flex-col gap-5">
-            <h2 class="font-bold text-2xl text-gray-800 md:text-3xl">{title}</h2>
-            <div class="flex gap-5 md:gap-6">
-            <p class="text-lg border bg-black text-white px-2 rounded-2xl">{date}</p>
-            <p class="text-xl text-gray-400">{subheading}</p>
-            </div>
-            <p class="text-base text-gray-800">{discrptions[0]}</p>
-            </div>
-            </div>
-        </>
-    )
+import { Link } from "react-router-dom";
 
-}
-export default project
+ import { projects } from "./data/projects";
+import Header from "./header";
+
+
+
+const Projects = () => {
+    
+  return (
+    < >
+        <Header selected="projects" />
+      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+        <h2 className="text-4xl font-bold text-gray-800 mb-10 text-center">Projects</h2>
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <div key={project.id} className="bg-white p-6 rounded-lg shadow-lg">
+              <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-md mb-4" />
+              <h3 className="text-2xl font-semibold text-gray-800">{project.title}</h3>
+              <p className="text-gray-600 text-sm mb-2">{project.date} • {project.category}</p>
+              <p className="text-gray-700 mb-4">{project.description}</p>
+              <div className="flex gap-4">
+                {project.github !== "#" && (
+                  <Link to={project.github} className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-900" target="_blank">
+                    GitHub
+                  </Link>
+                )}
+                {project.live !== "#" && (
+                  <Link to={project.live} className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700" target="_blank">
+                    Live Demo
+                  </Link>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Projects;

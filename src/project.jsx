@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
  import { projects } from "./data/projects";
 import Header from "./header";
+import Footer from "./footer";
 
 
 
@@ -36,6 +37,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

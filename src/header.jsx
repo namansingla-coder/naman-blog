@@ -28,7 +28,7 @@ function Header({ selected }) {
           <Link id="about" to="/about">About</Link>
           <Link id="projects" to="/projects">Projects</Link>
           <Link id="work" to="/work">Work</Link>
-          <Link id="blog" to="/blog">Blog</Link>
+          <Link id="blog" to="/research">Research</Link>
           <Link id="contact" to="/contact">Contact</Link>
         </div>
         <button onClick={show} className="md:hidden block rotate-90">

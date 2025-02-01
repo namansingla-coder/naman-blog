@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
-import Blog from './blog'
+import Blog from './research'
 import Work from './work'
 import About from './About'
 import Projects from './project'
@@ -15,7 +15,7 @@ function App() {
         <Route index element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/projects" element={<Projects />}></Route>
-        <Route path="/blog" element={<Blog />}></Route>
+        <Route path="/research" element={<Blog />}></Route>
         <Route path="/work" element={<Work />}></Route>
         <Route path="/contact" element={<ContactPage />}></Route>
         

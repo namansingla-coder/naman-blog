@@ -1,35 +1,41 @@
 import React from "react";
 import Header from "./header";
 import { Link } from "react-router-dom";
-import Naman_Singla from "./assets/Naman_Singla.pdf";
 import { projects } from "./data/projects";
 import { experiences } from "./data/experiences";
 import Footer from "./footer";
+import profile from "./images/profile.jpg";
 
 function Home() {
   return (
     <>
       <Header selected="home" />
-      <div className="flex flex-col items-center text-center gap-8 mx-6 mt-8 md:mt-24 md:gap-20 md:mx-36 md:text-left">
-        <div className="gap-5 flex flex-col md:gap-8 text-center">
-          <h1 className="font-bold text-5xl text-gray-900 leading-tight">Hi, I am Naman Singla</h1>
-          <p className="text-lg text-gray-700 max-w-xl mx-auto">
-            B.Tech student with strong coding skills, database expertise, and front-end development experience. Adept at back-end and front-end tasks, seeking an internship to enhance skills.
-          </p>
-          <div className="flex justify-center gap-4">
-            <a href={Naman_Singla} download="Naman_Singla.pdf">
-              <button className="bg-red-500 px-6 py-3 text-white font-medium rounded-lg shadow-md hover:bg-red-600 transition duration-300">
-                Download Resume
-              </button>
-            </a>
-            <Link to="/projects">
-              <button className="bg-blue-600 px-6 py-3 text-white font-medium rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
-                View Projects
-              </button>
-            </Link>
-          </div>
-        </div>
+      <div className="bg-gray-50 py-16 md:py-24">
+  <div className="flex flex-col items-center text-center gap-8 mx-6 md:mx-36">
+    <div className="flex flex-col md:flex-row gap-8 items-center">
+      {/* Profile Picture Section (Optional) */}
+      <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full border-2 border-gray-300 shadow-sm">
+        {/* You can replace the below with an <img /> tag if you have an avatar */}
+        <span className="text-xl font-semibold text-gray-700"><img className="w-40 h-40 rounded-full shadow-lg object-cover"src={profile}/></span>
       </div>
+
+      <div className="gap-5 flex flex-col text-center md:text-left">
+        <h1 className="font-bold text-4xl text-gray-900 leading-tight shadow-sm">Hi, I am Naman Singla</h1>
+        <p className="text-lg text-gray-700 max-w-xl mx-auto md:mx-0">
+          B.Tech student with strong coding skills, database expertise, and front-end development experience. Adept at back-end and front-end tasks, seeking an internship to enhance skills.
+        </p>
+
+        {/* Call to Action Button */}
+        <Link
+          to="/about"
+          className="mt-6 inline-block px-6 py-3 text-white bg-gray-700 hover:bg-gray-800 rounded-full text-lg font-semibold shadow-md transition duration-300"
+        >
+          About Me
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
       <div className="mt-14 md:mt-16 flex flex-col bg-blue-50 pb-12">
         <div className="mx-6 md:mx-36">
           <h3 className="text-center py-5 text-gray-900 font-bold text-2xl">Education</h3>

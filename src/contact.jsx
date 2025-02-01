@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './header';
 import emailjs from 'emailjs-com';
+import Footer from './footer';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -97,6 +98,7 @@ const ContactPage = () => {
         </form>
       </div>
     </div>
+    <Footer />
     </>
   );
 };

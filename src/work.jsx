@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./header";
 import { experiences } from "./data/experiences";
+import Footer from "./footer";
 
 
 const Experience = () => {
@@ -24,6 +25,7 @@ const Experience = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -16,7 +16,7 @@ export const experiences = [
       title: "Full Stack Training",
       company: "Devslane",
       location: "Remote",
-      date: "Sep 2024",
+      date: "Jun 2024 - Sep 2024",
       description: [
         "Successfully completed Full Stack Software Engineering Training.",
         "Gained hands-on experience in web and software development.",

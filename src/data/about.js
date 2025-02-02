@@ -1,3 +1,4 @@
+
 export const about = {
     Name: "Naman Singla",
     Age: 21,
@@ -21,5 +22,4 @@ export const about = {
       LinkedIn: "https://linkedin.com/in/namansingla7642",
       GitHub: "https://github.com/namansingla-coder",
     },
-    ResumeLink: "./assets/Naman__Singla.pdf"
   };

@@ -3,7 +3,7 @@ import Header from "./header";
 import { Link } from "react-router-dom";
 import profile from "./images/profile.jpg";
 import { about } from "./data/about"; // assuming the about object is imported from aboutData.js
-
+import Naman_Singla from "./assets/Naman__Singla.pdf";
 const About = () => {
   return (
     <>
@@ -48,7 +48,7 @@ const About = () => {
                   GitHub
                 </Link>
                 <a
-                  href={about.ResumeLink}
+                  href={Naman_Singla}
                   download="Naman_Singla.pdf"
                   className="bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700"
                 >

@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./header";
 import { Link } from "react-router-dom";
 import profile from "./images/profile.jpg";
-import Naman_Singla from "./assets/Naman_Singla.pdf";
+import { about } from "./data/about"; // assuming the about object is imported from aboutData.js
 
 const About = () => {
   return (
@@ -14,22 +14,25 @@ const About = () => {
           <div className="flex flex-col items-center gap-10">
             <img
               src={profile}
-              alt="Naman Singla"
+              alt={about.Name}
               className="w-40 h-40 md:w-52 md:h-52 rounded-full shadow-lg object-cover"
             />
             <div className="text-gray-700 max-w-2xl">
               <p className="mb-4 text-lg">
-                Hi, I'm <span className="font-semibold">Naman Singla</span>, a B.Tech student in Computer Science Engineering at <span className="font-semibold">Bennett University</span> with a CGPA of 9.14. I specialize in software development, deep learning, and full-stack web development.
+                Hi, I'm <span className="font-semibold">{about.Name}</span>, a B.Tech student in Computer Science Engineering at <span className="font-semibold">{about.University}</span> with a CGPA of <span className="font-semibold">{about.CGPA}</span>. I specialize in software development, deep learning, and full-stack web development.
+              </p>
+              {about.Bio.map((bio, index) => (
+                <p key={index} className="mb-4 text-lg">{bio}</p>
+              ))}
+              <p className="mb-4 text-lg">
+                I have experience working with modern technologies like <span className="font-semibold">{about.Skills.Tech.join(", ")}</span>. Passionate about problem-solving and innovation, I actively participate in hackathons and coding competitions.
               </p>
               <p className="mb-4 text-lg">
-                I have experience working with modern technologies like <span className="font-semibold">React, Tailwind CSS, JavaScript, Python, Machine Learning, and MySQL</span>. Passionate about problem-solving and innovation, I actively participate in hackathons and coding competitions.
-              </p>
-              <p className="mb-4 text-lg">
-                My strengths include <span className="font-semibold">teamwork, problem-solving, and a positive attitude</span>. I'm always eager to learn and explore new technologies.
+                My strengths include <span className="font-semibold">{about.Skills.Soft.join(", ")}</span>. I'm always eager to learn and explore new technologies.
               </p>
               <div className="flex justify-center gap-4 mt-4">
                 <Link
-                  to="https://linkedin.com/in/namansingla7642"
+                  to={about.SocialLinks.LinkedIn}
                   className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -37,7 +40,7 @@ const About = () => {
                   LinkedIn
                 </Link>
                 <Link
-                  to="https://github.com/namansingla-coder"
+                  to={about.SocialLinks.GitHub}
                   className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-900"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -45,7 +48,7 @@ const About = () => {
                   GitHub
                 </Link>
                 <a
-                  href={Naman_Singla}
+                  href={about.ResumeLink}
                   download="Naman_Singla.pdf"
                   className="bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700"
                 >

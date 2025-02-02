@@ -5,7 +5,7 @@ import { projects } from "./data/projects";
 import { experiences } from "./data/experiences";
 import Footer from "./footer";
 import profile from "./images/profile.jpg";
-
+import {about } from "./data/about";
 function Home() {
   return (
     <>

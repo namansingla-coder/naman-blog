@@ -3,74 +3,107 @@ import Header from "./header";
 import { Link } from "react-router-dom";
 import profile from "./images/profile.jpg";
 import Naman_Singla from "./assets/Naman__Singla.pdf";
+import { about } from "./data/about";
 
-const about = {
-  name: "Naman Singla",
-  education: "B.Tech in Computer Science Engineering at Bennett University",
-  cgpa: 9.14,
-  description:
-    "Passionate software developer skilled in full-stack development, deep learning, and problem-solving. Enthusiastic about innovation and technology.",
-  skills: [
-    "React", "Tailwind CSS", "JavaScript", "Python", "Machine Learning", "MySQL",
-    "AdonisJs", "Redux", "HTML", "Java", "C++"
-  ],
-  strengths: ["Teamwork", "Problem-solving", "Communication", "Leadership"],
-  links: {
-    linkedin: "https://linkedin.com/in/namansingla7642",
-    github: "https://github.com/namansingla-coder",
-  },
-};
 
 const About = () => {
   return (
     <>
       <Header selected="about" />
-      <div className="flex justify-center items-center min-h-screen px-6 md:px-12 lg:px-20 bg-gray-100">
-        <div className="bg-white p-8 shadow-lg rounded-lg max-w-4xl w-full text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">About Me</h2>
-          <div className="flex flex-col items-center gap-6">
+      <div className="min-h-screen bg-gray-100 py-10 px-6 md:px-12 lg:px-20">
+        <div className="max-w-5xl mx-auto bg-white p-8 shadow-lg rounded-lg">
+          {/* Profile Section */}
+          <div className="text-center">
             <img
               src={profile}
               alt={about.name}
-              className="w-40 h-40 md:w-52 md:h-52 rounded-full shadow-lg object-cover"
+              className="w-40 h-40 md:w-52 md:h-52 rounded-full shadow-lg mx-auto object-cover"
             />
-            <div className="text-gray-700 max-w-2xl text-lg">
-              <p className="mb-2">
-                Hi, I'm <span className="font-semibold">{about.name}</span>, a {about.education} student with a CGPA of <span className="font-semibold">{about.cgpa}</span>.
-              </p>
-              <p className="mb-2">{about.description}</p>
-              <p className="mb-2">
-                Skilled in: <span className="font-semibold">{about.skills.join(", ")}</span>.
-              </p>
-              <p className="mb-4">
-                Strengths: <span className="font-semibold">{about.strengths.join(", ")}</span>.
-              </p>
-              <div className="flex justify-center gap-4 mt-4">
-                <Link
-                  to={about.links.linkedin}
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </Link>
-                <Link
-                  to={about.links.github}
-                  className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-900"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </Link>
-                <a
-                  href={Naman_Singla}
-                  download="Naman_Singla.pdf"
-                  className="bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700"
-                >
-                  Download Resume
-                </a>
-              </div>
+            <h2 className="text-4xl font-bold text-gray-800 mt-4">{about.name}</h2>
+            <p className="text-lg text-gray-600">
+              {about.education.degree} at {about.education.university} ( {about.education.batch} ) | CGPA: {about.education.cgpa}
+            </p>
+            <p className="text-md text-gray-500">{about.location} • {about.email} • {about.phone}</p>
+          </div>
+
+          {/* About Section */}
+          <div className="mt-8 text-gray-700 text-lg">
+            <h3 className="text-2xl font-semibold text-gray-800 border-b pb-2 mb-4">About Me</h3>
+            <p>{about.description}</p>
+          </div>
+
+          {/* Skills Section */}
+          <div className="mt-8">
+            <h3 className="text-2xl font-semibold text-gray-800 border-b pb-2 mb-4">Technical Skills</h3>
+            <div className="flex flex-wrap gap-2">
+              {about.skills.map((skill, index) => (
+                <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-md text-sm font-medium">
+                  {skill}
+                </span>
+              ))}
             </div>
+          </div>
+
+          {/* Strengths Section */}
+          <div className="mt-8">
+            <h3 className="text-2xl font-semibold text-gray-800 border-b pb-2 mb-4">Strengths</h3>
+            <ul className="list-disc list-inside text-gray-700">
+              {about.strengths.map((strength, index) => (
+                <li key={index}>{strength}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Certifications Section */}
+          <div className="mt-8">
+            <h3 className="text-2xl font-semibold text-gray-800 border-b pb-2 mb-4">Certifications</h3>
+            <ul className="list-disc list-inside text-gray-700">
+              {about.certifications.map((cert, index) => (
+                <li key={index} className="mb-1">
+                  <span className="font-semibold">{cert.title}</span> - {cert.issuer} ({cert.date})
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Awards Section */}
+          <div className="mt-8">
+            <h3 className="text-2xl font-semibold text-gray-800 border-b pb-2 mb-4">Awards</h3>
+            <ul className="list-disc list-inside text-gray-700">
+              {about.awards.map((award, index) => (
+                <li key={index} className="mb-2">
+                  <span className="font-semibold">{award.title}</span> ({award.date})
+                  <p className="text-sm text-gray-600">{award.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Links Section */}
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              to={about.linkedin}
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 text-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </Link>
+            <Link
+              to={about.github}
+              className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-900 text-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </Link>
+            <a
+              href={Naman_Singla}
+              download="Naman_Singla.pdf"
+              className="bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700 text-center"
+            >
+              Download Resume
+            </a>
           </div>
         </div>
       </div>

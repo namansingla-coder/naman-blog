@@ -1,7 +1,7 @@
 export const education = [{
     title: "B.Tech in Computer Science Engineering",
     institution: "Bennett University",
-    year: "2022 - 2026",
+    year: "2022 - Present",
     details: "Focused on software development, deep learning, and full-stack web development. CGPA: 9.14"
   }, {
     title: "Class XII (CBSE)",

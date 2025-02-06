@@ -1,18 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
- import { projects } from "./data/projects";
+import { projects } from "./data/projects";
 import Header from "./header";
 import Footer from "./footer";
 
-
-
 const Projects = () => {
-    
   return (
-    < >
-        <Header selected="projects" />
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+    <div className="flex flex-col min-h-screen">
+      <Header selected="projects" />
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 flex-grow">
         <h2 className="text-4xl font-bold text-gray-800 mb-10 text-center">Projects</h2>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
@@ -38,7 +34,7 @@ const Projects = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

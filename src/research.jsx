@@ -1,13 +1,15 @@
 import React from 'react';
-import Header from './header'; // Assuming you have a Header component
+import Header from './header';
 import { researchPapers } from './data/reserchPaper';
 import Footer from './footer';
+
 const BlogPage = () => {
-  
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header selected="blog" />
-      <div className="container mx-auto px-4 py-6">
+
+      {/* Main Content (Pushes Footer to Bottom) */}
+      <div className="flex-grow container mx-auto px-4 py-6">
         <h2 className="text-3xl font-bold text-center mb-6">Research Papers</h2>
         <div className="space-y-6">
           {researchPapers.map((paper, index) => (
@@ -36,8 +38,10 @@ const BlogPage = () => {
           ))}
         </div>
       </div>
+
+      {/* Footer (Always at Bottom) */}
       <Footer />
-    </>
+    </div>
   );
 };
 

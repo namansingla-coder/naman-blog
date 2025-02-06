@@ -1,21 +1,51 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function Footer(){
-    return (
-        <>
-        <div className="mt-36 md:mt-20 flex flex-col gap-2 pb-12">
-  <div className="flex gap-7 mx-auto">
-    <Link to=""><img src="https://i.pinimg.com/736x/bb/90/24/bb902442d0880e99732aa1aada0c08de.jpg" className="max-w-6 max-h-6" /></Link>
-    <Link to="https://www.instagram.com/naman_singla__/"><img src="https://i.pinimg.com/originals/63/9b/3d/639b3dafb544d6f061fcddd2d6686ddb.png" className="max-w-8 max-h-8" /></Link>
-    <Link to="https://x.com/NamanSingla7642"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcErlbMsKsQG45xvST9jdYxzWwUWru1KCZJQ&s" className="max-w-6 max-h-6" /></Link>
-    <Link to="https://www.linkedin.com/in/namansingla7642"><img src="https://static.vecteezy.com/system/resources/previews/018/930/585/original/linkedin-logo-linkedin-icon-transparent-free-png.png" className="max-w-6 max-h-6" /></Link>
-  </div>
-  <div className="mx-auto">
-    <p className="text-sm text-gray-800">Copyright @2020 All rights reserved</p>
-  </div>
-  
-</div>
-        </>
-    )
+import { about } from "./data/about";
+
+function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white py-4">
+      <div className="container mx-auto px-6 text-center">
+        
+        {/* Social Media Links */}
+        <div className="flex justify-center gap-6 mb-">
+          <Link to={about.instagram} target="_blank" rel="noopener noreferrer">
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+              alt="Instagram"
+              className="w-8 h-8 hover:opacity-80 transition-opacity duration-300"
+            />
+          </Link>
+          <Link to={about.twitter} target="_blank" rel="noopener noreferrer">
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+              alt="Twitter"
+              className="w-8 h-8 hover:opacity-80 transition-opacity duration-300"
+            />
+          </Link>
+          <Link to={about.linkedin} target="_blank" rel="noopener noreferrer">
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+              alt="LinkedIn"
+              className="w-8 h-8 hover:opacity-80 transition-opacity duration-300 bg-white p-1 rounded-full"
+            />
+          </Link>
+          <Link to={about.github} target="_blank" rel="noopener noreferrer">
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png"
+              alt="GitHub"
+              className="w-8 h-8 hover:opacity-80 transition-opacity duration-300 bg-white p-1 rounded-full"
+            />
+          </Link>
+        </div>
+
+        {/* Copyright Text */}
+        <p className="text-xs text-gray-500">
+          &copy; {new Date().getFullYear()} {about.name}. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
 }
+
 export default Footer;

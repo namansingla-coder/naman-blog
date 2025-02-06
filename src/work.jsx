@@ -3,12 +3,13 @@ import Header from "./header";
 import { experiences } from "./data/experiences";
 import Footer from "./footer";
 
-
 const Experience = () => {
   return (
-    <>
-    <Header selected="work" />
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+    <div className="flex flex-col min-h-screen">
+      <Header selected="work" />
+
+      {/* Main Content (Pushes Footer to Bottom) */}
+      <div className="flex-grow container mx-auto px-6 md:px-12 lg:px-20 py-10">
         <h2 className="text-4xl font-bold text-gray-800 mb-10 text-center">Work Experience</h2>
         <div className="space-y-8">
           {experiences.map((exp) => (
@@ -25,8 +26,10 @@ const Experience = () => {
           ))}
         </div>
       </div>
+
+      {/* Footer (Always at Bottom) */}
       <Footer />
-    </>
+    </div>
   );
 };
 

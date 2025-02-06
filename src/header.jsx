@@ -1,48 +1,62 @@
 import React, { useEffect, useState } from "react";
-import show from "./app";
 import { Link } from "react-router-dom";
 
 function Header({ selected }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    // Remove 'text-red-400' from all links
-    const links = document.querySelectorAll("#header a");
-    links.forEach(link => link.classList.remove("text-red-400"));
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
 
-    // Add 'text-red-400' only to the selected link
-    if (selected) {
-      let element = document.getElementById(selected);
-      if (element) {
-        element.classList.add("text-red-400");
-      }
-    }
-  }, [selected]); // Runs when 'selected' changes
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <>
-      <div className="flex justify-end mt-7 mr-8 gap-4">
-        <div
-          id="header"
-          className={`space-x-4 ${
-            isMobileMenuOpen ? "block" : "hidden"
-          }  flex md:justify-end md:block overflow-auto max-h-screen`}
-        >
-          <Link id="home" to="/">Home</Link>
-          <Link id="about" to="/about">About</Link>
-          <Link id="projects" to="/projects">Projects</Link>
-          <Link id="work" to="/work">Work</Link>
-          <Link id="blog" to="/research">Research</Link>
-          <Link id="contact" to="/contact">Contact</Link>
-        </div>
+    <header
+      className={`fixed top-0 w-full z-50 bg-white shadow-md transition-all ${
+        isScrolled ? "py-2 shadow-lg" : "py-4"
+      }`}
+    >
+      <div className="container mx-auto flex justify-between items-center px-6 md:px-12">
+        {/* Branding / Logo */}
+        <Link to="/" className="text-2xl font-bold text-gray-800">
+          Naman Singla
+        </Link>
+
+        {/* Navigation Links */}
+        <nav className="hidden md:flex space-x-6 text-lg">
+          <Link to="/" className={`hover:text-blue-600 ${selected === "home" ? "text-blue-600 font-semibold" : "text-gray-700"}`}>Home</Link>
+          <Link to="/about" className={`hover:text-blue-600 ${selected === "about" ? "text-blue-600 font-semibold" : "text-gray-700"}`}>About</Link>
+          <Link to="/projects" className={`hover:text-blue-600 ${selected === "projects" ? "text-blue-600 font-semibold" : "text-gray-700"}`}>Projects</Link>
+          <Link to="/work" className={`hover:text-blue-600 ${selected === "work" ? "text-blue-600 font-semibold" : "text-gray-700"}`}>Work</Link>
+          <Link to="/research" className={`hover:text-blue-600 ${selected === "research" ? "text-blue-600 font-semibold" : "text-gray-700"}`}>Research</Link>
+          <Link to="/contact" className={`hover:text-blue-600 ${selected === "contact" ? "text-blue-600 font-semibold" : "text-gray-700"}`}>Contact</Link>
+        </nav>
+
+        {/* Mobile Menu Button */}
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-          className="md:hidden block rotate-90"
+          className="md:hidden text-gray-700 text-2xl"
         >
-          <p className="text-3xl">|||</p>
+          ☰
         </button>
       </div>
-    </>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col text-lg py-4">
+          <Link to="/" className="py-2 px-6 hover:bg-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+          <Link to="/about" className="py-2 px-6 hover:bg-gray-100" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+          <Link to="/projects" className="py-2 px-6 hover:bg-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Projects</Link>
+          <Link to="/work" className="py-2 px-6 hover:bg-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Work</Link>
+          <Link to="/research" className="py-2 px-6 hover:bg-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Research</Link>
+          <Link to="/contact" className="py-2 px-6 hover:bg-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+        </div>
+      )}
+    </header>
   );
 }
 

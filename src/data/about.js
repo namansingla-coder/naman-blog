@@ -1,8 +1,13 @@
+import profile from "../images/profile.jpg"
 export const about = {
+  title: "About Me",
+  profile: profile,
     name: "Naman Singla",
     location: "Kaithal, Haryana",
     email: "namansingla@myyahoo.com",
     phone: "9034733880",
+    twitter: "https://x.com/NamanSingla7642",
+    instagram: "https://www.instagram.com/naman_singla__/",
     linkedin: "https://linkedin.com/in/namansingla7642",
     github: "https://github.com/namansingla-coder",
     portfolio: "https://namansingla-blog.netlify.app",

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { projects } from "./data/projects";
 import { experiences } from "./data/experiences";
 import Footer from "./footer";
-import profile from "./images/profile.jpg";
 import {about } from "./data/about";
 function Home() {
   return (
@@ -16,13 +15,13 @@ function Home() {
       {/* Profile Picture Section (Optional) */}
       <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full border-2 border-gray-300 shadow-sm">
         {/* You can replace the below with an <img /> tag if you have an avatar */}
-        <span className="text-xl font-semibold text-gray-700"><img className="w-40 h-40 rounded-full shadow-lg object-cover"src={profile}/></span>
+        <span className="text-xl font-semibold text-gray-700"><img className="w-40 h-40 rounded-full shadow-lg object-cover"src={about.profile}/></span>
       </div>
 
       <div className="gap-5 flex flex-col text-center md:text-left">
-        <h1 className="font-bold text-4xl text-gray-900 leading-tight shadow-sm">Hi, I am Naman Singla</h1>
+        <h1 className="font-bold text-4xl text-gray-900 leading-tight shadow-sm">Hi, I am {about.name}</h1>
         <p className="text-lg text-gray-700 max-w-xl mx-auto md:mx-0">
-          B.Tech student with strong coding skills, database expertise, and front-end development experience. Adept at back-end and front-end tasks, seeking an internship to enhance skills.
+          {about.description}
         </p>
 
         {/* Call to Action Button */}

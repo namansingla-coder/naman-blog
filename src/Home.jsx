@@ -3,6 +3,7 @@ import Header from "./header";
 import { Link } from "react-router-dom";
 import { projects } from "./data/projects";
 import { experiences } from "./data/experiences";
+import {education} from "./data/education";
 import Footer from "./footer";
 import {about } from "./data/about";
 function Home() {
@@ -40,17 +41,7 @@ function Home() {
           <h3 className="text-center py-5 text-gray-900 font-bold text-2xl">Education</h3>
         </div>
         <div className="mx-3 md:mx-36 flex flex-col gap-6">
-          {[{
-            title: "B.Tech in Computer Science Engineering",
-            institution: "Bennett University",
-            year: "2022 - 2026",
-            details: "Focused on software development, deep learning, and full-stack web development. CGPA: 9.14"
-          }, {
-            title: "Class XII (CBSE)",
-            institution: "MDN Public School",
-            year: "2021 - 2022",
-            details: "Completed higher secondary education with a strong foundation in mathematics and computer science."
-          }].map((edu, index) => (
+          {education.slice(0, 2).map((edu, index) => (
             <div key={index} className="bg-white p-6 shadow-lg rounded-lg border-l-4 border-blue-500">
               <h4 className="text-2xl font-semibold text-gray-900">{edu.title}</h4>
               <p className="text-gray-600 text-sm">{edu.institution} | {edu.year}</p>

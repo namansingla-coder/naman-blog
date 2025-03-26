@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { about } from "./data/about";
 function Header({ selected }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,7 +23,7 @@ function Header({ selected }) {
       <div className="container mx-auto flex justify-between items-center px-6 md:px-12">
         {/* Branding / Logo */}
         <Link to="/" className="text-2xl font-bold text-gray-800">
-          Naman Singla
+          {about.name}
         </Link>
 
         {/* Navigation Links */}

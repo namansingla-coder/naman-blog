@@ -1,8 +1,7 @@
 import React from "react";
 import Header from "./header";
 import { Link } from "react-router-dom";
-import profile from "./images/profile.jpg";
-import Naman_Singla from "./assets/Naman__Singla.pdf";
+import Naman_Singla from "./assets/Naman's.pdf";
 import { about } from "./data/about";
 
 
@@ -15,7 +14,7 @@ const About = () => {
           {/* Profile Section */}
           <div className="text-center">
             <img
-              src={profile}
+              src={about.profile}
               alt={about.name}
               className="w-40 h-40 md:w-52 md:h-52 rounded-full shadow-lg mx-auto object-cover"
             />

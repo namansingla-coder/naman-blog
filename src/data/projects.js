@@ -1,4 +1,4 @@
-import FarmDisease from "../images/Farm-Disease-Detection.png"; 
+import FarmDisease from "../images/Farm.png"; 
 import EazyCart from "../images/eazyCartes_home.png"; 
 import Product_Classification from "../images/Product_Classification.png";
 import NutriGuide_AI from "../images/NutriGuide_AI.png";
@@ -11,9 +11,9 @@ export const projects = [
       date: "March-2025",
       category: "AI & Computer Vision",
       image: FarmDisease,
-      description: "Farm Diseases Detection is an AI-powered web app. I developed the frontend using React and built the backend with Flask to serve TensorFlow and PyTorch models for disease detection. Users can upload images to get real-time predictions.",
-      github: "https://github.com/namansingla-coder/farm-disease-detection.git",
-      live: "#"
+      description: "Developed an AI-powered deep learning system to detect poultry, potato, and crop diseases using CNN. It is integrated them into a Streamlit web app for real-time image-based diagnosis.",
+      github: "https://github.com/namansingla-coder/farm-detection.git",
+      live: "https://farm-detection.streamlit.app"
     },
     {
       id: 2,

@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./header";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Naman_Singla from "./assets/NamanSingla.pdf";
+import Naman_Singla from "./assets/Naman_Singla.pdf";
 import { about } from "./data/about";
 
 const About = () => {

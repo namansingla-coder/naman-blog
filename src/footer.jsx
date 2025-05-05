@@ -4,11 +4,10 @@ import { about } from "./data/about";
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-4">
+    <footer className="bg-gray-800 text-white py-4 mt-8">
       <div className="container mx-auto px-6 text-center">
-        
         {/* Social Media Links */}
-        <div className="flex justify-center gap-6 mb-">
+        <div className="flex justify-center gap-6 mb-4">
           <Link to={about.instagram} target="_blank" rel="noopener noreferrer">
             <img 
               src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
@@ -40,7 +39,7 @@ function Footer() {
         </div>
 
         {/* Copyright Text */}
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-gray-400">
           &copy; {new Date().getFullYear()} {about.name}. All rights reserved.
         </p>
       </div>

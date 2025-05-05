@@ -2,27 +2,43 @@ import React from 'react';
 import Header from './header';
 import { researchPapers } from './data/reserchPaper';
 import Footer from './footer';
+import { motion } from 'framer-motion';
 
 const BlogPage = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Header (Fixed, so added top padding) */}
+    <div className="flex flex-col min-h-screen bg-gradient-to-r from-teal-100 via-blue-100 to-indigo-100">
+      {/* Header */}
       <Header selected="blog" />
 
-      {/* Main Content (Grows to push footer down) */}
+      {/* Main Content */}
       <div className="container mx-auto px-6 md:px-12 lg:px-20 py-24 flex-grow">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">📚 Research Papers</h2>
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          📚 Research Papers
+        </motion.h2>
 
-        {/* Research Papers Row (Flex Format with Scroll) */}
-        <div className="flex space-x-6 overflow-x-auto px-4 py-4 scrollbar-hide">
+        {/* Research Papers Full-Width Layout */}
+        <motion.div
+          className="w-full flex flex-col gap-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           {researchPapers.length > 0 ? (
             researchPapers.map((paper, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="min-w-[300px] bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1 w-full"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <h3 className="text-xl font-semibold text-blue-700">{paper.title}</h3>
-                <p className="text-gray-600 mt-3">{paper.description}</p>
+                <h3 className="text-lg md:text-xl font-semibold text-blue-700">{paper.title}</h3>
+                <p className="text-gray-600 mt-3 text-sm md:text-base">{paper.description}</p>
 
                 {/* Buttons for Download / Read */}
                 <div className="mt-4">
@@ -47,12 +63,12 @@ const BlogPage = () => {
                     <span className="text-gray-500">🚧 Coming Soon</span>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))
           ) : (
             <p className="text-center text-gray-600 text-lg">No research papers available.</p>
           )}
-        </div>
+        </motion.div>
       </div>
 
       {/* Footer (Always at Bottom) */}

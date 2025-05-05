@@ -25,24 +25,24 @@ const Header = ({ selected }) => {
     >
       <div className="container mx-auto flex justify-between items-center px-6 md:px-12">
         {/* Branding / Logo */}
-        <Link to="/" className="text-3xl font-extrabold text-gray-900 dark:text-white">
+        <Link to="/" className="text-3xl font-extrabold text-gray-900 dark:text-white transition-all">
           {about.name}
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 text-lg">
-          {[ "about", "projects", "work", "research", "contact"].map((item) => (
-            <Link
+          {["about", "projects", "work", "research", "contact"].map((item) => (
+            <motion.div
               key={item}
-              to={`/${item}`}
+              whileHover={{ scale: 1.1 }}
               className={`relative font-medium transition-all ${
                 selected === item
                   ? "text-blue-600 font-semibold after:absolute after:w-full after:h-1 after:bg-blue-600 after:bottom-0 after:left-0 after:rounded-full"
                   : "text-gray-700 dark:text-gray-300 hover:text-blue-600"
               }`}
             >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </Link>
+              <Link to={`/${item}`}>{item.charAt(0).toUpperCase() + item.slice(1)}</Link>
+            </motion.div>
           ))}
         </nav>
 
@@ -65,14 +65,19 @@ const Header = ({ selected }) => {
         }`}
       >
         {["about", "projects", "work", "research", "contact"].map((item) => (
-          <Link
+          <motion.div
             key={item}
-            to={`/${item}`}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="block py-3 px-6 text-lg text-gray-800 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            whileHover={{ scale: 1.05 }}
+            className="border-b border-gray-200 dark:border-gray-700"
           >
-            {item.charAt(0).toUpperCase() + item.slice(1)}
-          </Link>
+            <Link
+              to={`/${item}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-3 px-6 text-lg text-gray-800 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </Link>
+          </motion.div>
         ))}
       </motion.div>
     </header>

@@ -23,22 +23,43 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ success: false, message: '' });
+  // Replace your handleSubmit function with this:
+const handleSubmit = (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus({ success: false, message: '' });
 
-    // Form will be handled by Netlify
-    // This is just for UX feedback
-    setTimeout(() => {
+  // Get form data for fetch API
+  const formElement = e.target;
+  const formData = new FormData(formElement);
+  
+  // Submit the form data to Netlify
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => {
+      // Success handling
       setSubmitStatus({ 
         success: true, 
         message: 'Message sent successfully! I will get back to you soon.' 
       });
       setFormData({ name: '', email: '', message: '' });
+    })
+    .catch((error) => {
+      // Error handling
+      console.error(error);
+      setSubmitStatus({ 
+        success: false, 
+        message: 'Failed to send the message. Please try again later.' 
+      });
+    })
+    .finally(() => {
       setIsSubmitting(false);
-    }, 1000);
-  };
+    });
+};
+
 
   return (
     <>
@@ -126,6 +147,7 @@ const ContactPage = () => {
               <form 
                 name="contact"
                 method="POST"
+                action="/"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}

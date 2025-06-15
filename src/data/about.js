@@ -3,7 +3,7 @@ export const about = {
   title: "About Me",
   profile: profile,
     name: "Naman Singla",
-    location: "Kaithal, Haryana",
+    location: "Gurugram, Haryana",
     email: "namansingla@myyahoo.com",
     phone: "9034733880",
     twitter: "https://x.com/NamanSingla7642",
@@ -14,7 +14,7 @@ export const about = {
     education: {
       degree: "B.Tech in Computer Science Engineering",
       university: "Bennett University",
-      cgpa: 9.14,
+      cgpa: 9.07,
       batch: 2026, // Graduation Year Included
     },
     description:

@@ -42,7 +42,7 @@ const handleSubmit = (e) => {
   })
   .then(() => {
     // Also submit to Formspree for email notifications
-    return fetch("https://formspree.io/f/your-formspree-id", {
+    return fetch("https://formspree.io/f/myzjjdlb", {
       method: "POST",
       body: formData,
       headers: { Accept: "application/json" }

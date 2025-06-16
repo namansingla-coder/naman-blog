@@ -384,42 +384,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Call to Action */}
-      <div className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern"></div>
-        </div>
-        <div className="max-w-4xl mx-auto px-4 md:px-8 text-center relative z-10">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Let's Work Together
-          </motion.h2>
-          <motion.p 
-            className="text-blue-100 mb-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            I'm currently available for freelance work and internship opportunities. If you have a project that needs some creative work, I'd love to hear about it.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Link
-              to="/contact"
-              className="px-8 py-3 bg-white text-blue-600 rounded-lg shadow-lg font-medium hover:bg-blue-50 transition-colors"
-            >
-              Contact Me
-            </Link>
-          </motion.div>
-        </div>
-      </div>
 
       <Footer />
     </>

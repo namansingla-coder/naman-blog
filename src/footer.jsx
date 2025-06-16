@@ -14,7 +14,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8 mt-8">
+    <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo & Copyright */}

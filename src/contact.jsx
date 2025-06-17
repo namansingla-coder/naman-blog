@@ -16,7 +16,6 @@ import {
   FaExclamationTriangle
 } from 'react-icons/fa';
 import { about } from './data/about';
-
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -46,21 +45,20 @@ const ContactPage = () => {
     const formElement = e.target;
     const formData = new FormData(formElement);
     
-    // Submit to Netlify
-    fetch("/", {
+    // Direct submission to Formspree (more reliable)
+    const formspreeId =  import.meta.env.VITE_APP_FORMSPREE_ID; // Hardcoded for reliability
+    fetch(`https://formspree.io/f/${formspreeId}`, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: formData,
+      headers: { Accept: "application/json" }
     })
-    .then(() => {
-      // Also submit to Formspree for email notifications
-      return fetch("https://formspree.io/f/myzjjdlb", {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" }
-      });
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
     })
-    .then(() => {
+    .then(data => {
       // Success handling
       setSubmitStatus({ 
         success: true, 

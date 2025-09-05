@@ -4,6 +4,7 @@ import EazyCart from "../images/eazyCartes_home.png";
 import Product_Classification from "../images/Product_Classification.png";
 import NutriGuide_AI from "../images/NutriGuide_AI.png";
 import ToDoWave from "../images/TodoWave.png";
+import ShipTrack from "../images/ShipTrack.png"; // Add the image for the new project
 
 export const projects = [
   {
@@ -30,6 +31,17 @@ export const projects = [
   },
   {
     id: 3,
+    title: "ShipTrack: Smart Shipment Management System",
+    date: "June-2025",
+    category: "Logistics & Web Application",
+    image: ShipTrack,
+    description:
+      "A full-featured shipment management web app where users can create and track shipments in real-time with unique tracking IDs. It supports UPI payments via QR, dynamic pricing based on package specs, and real-time status updates. The admin panel includes shipment control, user management, and payment verification. A modern Firebase + React.js build with glassmorphism UI, mobile-first layout, dashboards with analytics, and smooth animations.",
+    github: "https://github.com/namansingla-coder/Shipment-Delivery-Application.git", // update this if available
+    live: "https://shipment-delivery-application.netlify.app" // add live URL if deployed
+  },
+  {
+    id: 4,
     title: "Eazy Carters",
     date: "July-2024",
     category: "Ecommerce",
@@ -40,7 +52,7 @@ export const projects = [
     live: "https://eazycarters.netlify.app"
   },
   {
-    id: 4,
+    id: 5,
     title: "NutriGuide AI",
     date: "Jan-2024",
     category: "Deep Learning",
@@ -51,7 +63,7 @@ export const projects = [
     live: "#"
   },
   {
-    id: 5,
+    id: 6,
     title: "Product Classification & Expiry Date Detection",
     date: "Nov-2024",
     category: "AI & Computer Vision",
@@ -62,7 +74,7 @@ export const projects = [
     live: "#"
   },
   {
-    id: 6,
+    id: 7,
     title: "ToDo Wave",
     date: "April-2025",
     category: "Productivity",
